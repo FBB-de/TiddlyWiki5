@@ -1,0 +1,40 @@
+created: 20200306112033419
+modified: 20200306122517676
+tags: 
+title: test-linst-indentation
+type: text/vnd.tiddlywiki
+
+* level 1 - no indent  
+some text,
+
+** level 2 - no indent
+
+----
+
+some paragraph text, followed by an indented user list
+
+*.in indented level 1  
+more text, more text, more text, more text, more text, more text, more text, more text, more text, more text, more text, more text, more text, 
+
+*.in indented level 1  
+more text, more text, more text, 
+
+** next level ... inherits indentation, because it's a nested list. 
+
+---
+
+# numbered no indent  
+some text,
+
+## next level
+
+-----------
+
+#.in ordered level 1 indented  
+more text, more text, more text, more text, more text, more text, more text, more text, more text, more text, more text, more text, more text, 
+
+#.in next element level 1  
+more text, more text, more text, 
+
+## next level 2 indented
+

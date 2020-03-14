@@ -1,0 +1,17 @@
+created: 20200312120841506
+modified: 20200312141855560
+tags: $:/tags/Stylesheet
+title: plugin-info-style
+type: text/vnd.tiddlywiki
+
+.tc-plugin-info-name {
+  font-weight: bold;
+}
+
+.tc-plugin-info-name::after {
+  content: " - "
+}
+
+.tc-plugin-info-parent-plugin {
+  margin-left: 3em;
+}

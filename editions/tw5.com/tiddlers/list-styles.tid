@@ -1,0 +1,28 @@
+created: 20200306105830105
+modified: 20200306122432642
+tags: $:/tags/Stylesheet
+title: list-styles
+type: text/vnd.tiddlywiki
+
+.tc-tiddler-preview li,
+.tc-tiddler-body li {
+  margin-top: .7em;
+}
+
+.tc-tiddler-preview li li,
+.tc-tiddler-body li li {
+  margin-top: .2em;
+}
+
+.tc-tiddler-preview .in,
+.tc-tiddler-body .in {
+  margin-left: 3em; 
+}
+
+ul .in{
+  list-style-type: "&#9733; "
+}
+
+ol .in {
+  list-style-type: decimal-leading-zero;
+}

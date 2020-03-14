@@ -1,0 +1,13 @@
+created: 20200227093825105
+modified: 20200303132043908
+tags: $:/tags/Stylesheet
+title: test-styles
+type: text/vnd.tiddlywiki
+
+.tc-p2 {
+  margin-left: 3em;
+}
+
+.tc-p3 {
+ margin-left: 5em;
+}
