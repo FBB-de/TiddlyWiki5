@@ -12,6 +12,9 @@ Module that creates a $tw.utils.Popup object prototype that manages popups in th
 /*global $tw: false */
 "use strict";
 
+// Configuration tiddler, if click animation shuld be shown!
+var CONFIG_CLICK_ANIMATION = "$:/config/clickEffect";
+
 /*
 Creates a Popup object with these options:
 	rootElement: the DOM element to which the popup zapper should be attached
@@ -58,6 +61,7 @@ Popup.prototype.findPopup = function(title) {
 };
 
 Popup.prototype.handleEvent = function(event) {
+	var options = {};
 	if(event.type === "click") {
 		// Find out what was clicked on
 		var info = this.popupInfo(event.target),
@@ -68,6 +72,32 @@ Popup.prototype.handleEvent = function(event) {
 		}
 		// Cancel
 		this.cancel(cancelLevel);
+		// Show Click Animation
+		this.clickAnimation(event);
+	}
+};
+	
+Popup.prototype.pulseElement = function(domNode) {
+	$tw.utils.pulseElement(domNode)
+}
+
+/*
+Animation Options: ... if configured
+clickEffect: CSS class name as string with no special formatting eg: clickEffect
+domNode: DOM node, that should contain the animated element. eg: rootElement
+event: event Object
+*/
+Popup.prototype.clickAnimation = function(event) {
+	var options = {};
+	options.event = event;
+	var clickEffect = $tw.wiki.getTiddlerText(CONFIG_CLICK_ANIMATION,"no").trim();
+	if (clickEffect !== "no") {
+		options = {
+			clickEffect: clickEffect,
+			domNode: this.rootElement,
+			event: event
+		}
+		$tw.utils.clickAnimation(options);
 	}
 };
 
