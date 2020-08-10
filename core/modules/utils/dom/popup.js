@@ -91,17 +91,24 @@ Popup.prototype.clickAnimation = function(event) {
 	var options = {};
 	options.event = event;
 	var clickEffect = $tw.wiki.getTiddlerText(CONFIG_CLICK_ANIMATION,"no").trim();
+<<<<<<< HEAD
 	if (clickEffect === "yes") {
+=======
+	if (clickEffect !== "no") {
+>>>>>>> origin/clickAnimation
 		options = {
 			clickEffect: clickEffect,
 			domNode: this.rootElement,
 			event: event
 		}
 		$tw.utils.clickAnimation(options);
+<<<<<<< HEAD
 	} else {
 		// TODO ... make the animation completely configurable
 		// Be aware, if there is no proper CSS config the "animationEnd" event won't be called
 		// so it will polute the DOM !!!
+=======
+>>>>>>> origin/clickAnimation
 	}
 };
 
