@@ -93,7 +93,7 @@ Popup.prototype.clickAnimation = function(event) {
 	var clickEffect = $tw.wiki.getTiddlerText(CONFIG_CLICK_ANIMATION,"no").trim();
 	if (clickEffect === "yes") {
 		options = {
-			clickEffect: clickEffect,
+			clickEffect: "clickEffect",
 			domNode: this.rootElement,
 			event: event
 		}
@@ -197,7 +197,7 @@ Popup.prototype.cancel = function(level) {
 				popup.wiki.deleteTiddler(popup.title);
 			} else {
 				popup.wiki.deleteTiddler($tw.utils.parseTextReference(popup.title).title);
-        		}
+			}
 		}
 	}
 	if(this.popups.length === 0) {
