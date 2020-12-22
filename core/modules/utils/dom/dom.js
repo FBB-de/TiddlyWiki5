@@ -201,8 +201,8 @@ exports.clickAnimation = function(options) {
 		element = document.createElement("div");
 
 	element.className = options.clickEffect || "";
-	element.style.top = event.clientY+"px";
-	element.style.left = event.clientX+"px";
+	element.style.top = options.event.clientY+"px";
+	element.style.left = options.event.clientX+"px";
 	options.domNode.appendChild(element);
 	// Event handler to remove the element if animation is finished
 	element.addEventListener(eventName,function() {
