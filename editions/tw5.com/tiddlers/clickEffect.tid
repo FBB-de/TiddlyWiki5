@@ -1,7 +1,13 @@
+created: 20200722072842967
+modified: 20201222153335878
+tags: $:/tags/Stylesheet
+title: clickEffect
+type: text/css
+
 .pulse {
-  background: lightgreen;
-  animation: pulse 0.6s ease-out;
-  z-index: 99999;
+	background: lightgreen;
+	animation: pulse 0.6s ease-out;
+	z-index: 99999; 
 }
 
 @keyframes pulse {
