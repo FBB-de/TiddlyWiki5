@@ -20,8 +20,9 @@ function Performance(enabled) {
 }
 
 Performance.prototype.showGreeting = function() {
-	if($tw.browser) {
-		this.logger.log("Execute $tw.perf.log(); to see filter execution timings");		
+	if($tw.browser && this.enabled) {
+		this.logger.log("Execute $tw.perf.log(); to see filter execution timings in the console");
+		this.logger.log("Execute $tw.perf.createTiddler(from,to,useMD,rullRes); to show timings in a temporary tiddler");
 	}
 };
 
@@ -63,6 +64,63 @@ Performance.prototype.log = function() {
 		results.push({name: name,invocations: measure.invocations, avgTime: measure.time / measure.invocations, totalTime: measure.time, percentTime: (measure.time / totalTime) * 100})
 	});
 	self.logger.table(results);
+};
+
+Performance.prototype.createTiddler = function(from, to, useMD, fullRes) {
+	var self = this,
+		NAME = "$:/temp/filter/measurement/asTable",
+		from = from || 0,
+		to = to || 1000,
+		to = to + 1,
+		useMD = useMD || false,
+		fullRes = fullRes || false;
+		lines = [],
+		header = [],
+		totalTime = 0,
+		orderedMeasures = Object.keys(this.measures).sort(function(a,b) {
+			if(self.measures[a].time > self.measures[b].time) {
+				return -1;
+			} else if (self.measures[a].time < self.measures[b].time) {
+				return + 1;
+			} else {
+				return 0;
+			}
+		});
+	if (useMD) {
+		header.push("```\n");
+		header.push("Pos |Filter |Invoke |Average |Total |% \n");
+		header.push("--- |------ |------ |------- |----- |- \n");
+		header = header.join("");
+	} else {
+		header.push("\\rules only table \n\n");
+		header.push("|filterPerformanceTable |k\n");
+		header.push("|Pos |Filter |Invoke |Average |Total |% |\n");
+		header = header.join("");
+	}
+	$tw.utils.each(orderedMeasures,function(name) {
+		totalTime += self.measures[name].time;
+	});
+	var results = [];
+	var cnt = 0;
+	$tw.utils.each(orderedMeasures,function(name) {
+		var left, right, 
+			measure = self.measures[name],
+			average = measure.time / measure.invocations,
+			percent = (measure.time / totalTime) * 100,
+			filter = name.trim().replace(/\r?\n/g," ");
+		average = (fullRes) ? average : (average > 0) ? average.toFixed(3) : 0;
+		percent = (fullRes) ? percent : (percent > 0) ? percent.toFixed(2) : 0;
+		left = (useMD) ? "" : "|";
+		right = (useMD) ? "" : " |";
+		lines.push( left + cnt++ + " |" + filter + " |" + measure.invocations + 
+					" |" + average + " |" + measure.time + " |" + percent + right);
+	});
+	lines = lines.slice(from, to);
+	if (useMD) {
+		lines.push("```\n")
+	}
+	$tw.wiki.addTiddler(new $tw.Tiddler($tw.wiki.getCreationFields(),{title: NAME, text: header + lines.join("\n")},$tw.wiki.getModificationFields()));
+	$tw.wiki.addTiddler(new $tw.Tiddler({title: "$:/StoryList",list: [NAME]}));
 };
 
 /*
