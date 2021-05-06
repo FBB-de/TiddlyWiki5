@@ -1,0 +1,9 @@
+created: 20210506124814975
+modified: 20210506125544392
+tags: $:/tags/Stylesheet
+title: performance-table-styles
+type: text/vnd.tiddlywiki
+
+.filterPerformanceTable .evenRow {
+  background: #eee;
+}
