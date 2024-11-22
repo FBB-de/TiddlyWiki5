@@ -1,0 +1,12 @@
+created: 20210827193507760
+modified: 20210827194659043
+origin: Date Fields
+tags: Konzept
+title: Datumsfelder
+type: text/vnd.tiddlywiki
+
+Bestimmte [[Felder|Tiddler-Felder]] eines Tiddlers werden verwendet, um Daten und Zeiten zu speichern. TiddlyWiki unterstützt Datumsangaben vom Jahr -9999 bis zum Jahr 9999.
+
+{{$:/_template/fehlt}}
+
+<<wikidokulink2>>

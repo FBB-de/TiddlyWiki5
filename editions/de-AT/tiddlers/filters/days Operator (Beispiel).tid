@@ -1,0 +1,22 @@
+created: 20210827195547111
+modified: 20210827200859473
+tags: [[days Operator]] [[Operator Beispiel]]
+title: days Operator (Beispiel)
+type: text/vnd.tiddlywiki
+
+<<.operator-example 1 "[days[-14]]" "Tiddler die in den letzten 14 Tagen modifiziert worden sind.>>
+<<.operator-example 2 "[!days:created[-800]]" "Tiddler die vor mehr als 800 Tagen erstellt wurden.">>
+Der Filter kann verwendet werden, um neue Elemente in einer Liste hervorzuheben. Zum Beispiel in einer Liste der letzten 100 Tiddler die in den letzten 120 Tagen modifiziert wurden:
+<$macrocall
+  $name="wikitext-example-without-html" src=
+"""
+<ul>
+  <$list filter="[last[100]!<currentTiddler>!sort[modified]]">
+    <li>
+      <$link><$view field="title"/></$link>
+         <$list filter="[<currentTiddler>days[-14]]"> @@color:red;^^new^^@@</$list>
+         <$list filter="[<currentTiddler>days[-120]!days[-14]]"> @@color:black;^^recent^^@@</$list>
+    </li>
+  </$list>
+</ul>
+"""/>

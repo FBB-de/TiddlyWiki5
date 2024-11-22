@@ -1,15 +1,15 @@
 caption: field
 created: 20200610205641067
 creator: FBB
-modified: 20210720214516847
+modified: 20210907194748595
 modifier: FBB
-op-input: eine [[Titelselektion]]
-op-neg-output: die Eingabe-Tiddler, in denen Feld F ''nicht'' den Wert S hat
-op-output: die Eingabe-Tiddler, in denen Feld F den Wert S hat
-op-parameter: einen möglichen Wert des Feldes F
+op-input: Eine [[Titelselektion]]
+op-neg-output: Die Eingabe-Tiddler, in denen Feld F ''nicht'' den Wert S hat
+op-output: Die Eingabe-Tiddler, in denen Feld F den Wert S hat
+op-parameter: Einen möglichen Wert des Feldes F
 op-parameter-name: S
-op-purpose: die Eingabe nach einem Feld filtern
-op-suffix: der Name eines Feldes
+op-purpose: Die Eingabe nach einem Feld filtern
+op-suffix: Der Name eines Feldes
 op-suffix-name: F
 origin: field Operator
 tags: Filter-Operator Feld-Operator Negierbarer-Operator Common-Operator
@@ -23,9 +23,7 @@ Wenn ''//S//'' leer ist, stimmt das Feld mit den beiden folgenden Angaben übere
 
 Die Syntax eines [[Filter-Schrittes|Filter-Schritt]] behandelt jeden nicht erkannten [[Filter-Operator]] so, als wäre er das Suffix des Feld-Operators. 
 
-!! Beispiel
-
-* [[field Operator (Beispiel)]]
+<<.op-example "field">>
 
 
 <<wikidokulink2 >>

@@ -1,0 +1,20 @@
+caption: eachday
+created: 20210906201747858
+modified: 20210907194659509
+op-input: Eine [[Titelselektion]]
+op-output: Der Tiddler der den ersten Eingabetitel enthält, der für jeden unterschiedlichen Wert des Feldes <<.place F>> gefunden wurde. Der Zeitanteil des Feldwertes wird ignoriert.
+op-parameter: Name eines [[Datumsfeldes|Datumsfelder]], standardmäßig ist das <<.field modified>>
+op-parameter-name: F
+op-purpose: Aus einer Gruppe von Eingabetiteln jeweils einen nach Datum auswählen.
+origin: eachday Operator
+tags: Filter-Operator
+title: eachday Operator
+type: text/vnd.tiddlywiki
+
+Jeder Eingabetitel wird der Reihe nach verarbeitet. Der Wert des Feldes <<.place F>> im entsprechenden Tiddler wird untersucht, und solange dieser ein Datum angibt, das noch nicht gefunden wurde, wird der Titel an die Ausgabe angehängt.
+
+Wenn ein Tiddler kein Feld <<.place F>> enthält, trägt er nichts zur Ausgabe bei.
+
+<<op-example "eachday">>
+
+<<wikidokulink2>>

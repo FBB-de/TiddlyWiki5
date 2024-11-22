@@ -1,0 +1,15 @@
+created: 20220607203604802
+modified: 20220607204534336
+tags: [[TiddlyWiki mit Node.js]]
+title: Upgrade von TiddlyWiki mit Node.js
+type: text/vnd.tiddlywiki
+
+Die Aktualisierung von TiddlyWiki mit Note.js unterscheidet sich vom [[Upgrade-Mechanismus]] für einzelne ~TiddlyWiki-Dateien.
+
+Wenn ~TiddlyWiki mit Node.js auf die übliche Weise installiert wurde kann es mit folgendem Befehl auf der Konsole aktualisiert werden:
+
+```
+npm update -g tiddlywiki
+```
+
+Für ~MacOS oder Linux muss gegebenenfalls noch ein ''sudo'' vorangestellt werden.

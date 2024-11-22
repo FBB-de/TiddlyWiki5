@@ -1,7 +1,7 @@
 created: 20210706121244635
 creator: FBB
 description: spezielles Makros für die de-AT Dokumentation
-modified: 20210709162435761
+modified: 20210907194325019
 modifier: FBB
 tags: $:/tags/Macro
 title: $:/editions/tw5.com/de/Macro/doc-macros
@@ -22,5 +22,9 @@ type: text/vnd.tiddlywiki
 \define .mark(_) <mark>$_$</mark>
 \define .bmark(_) <mark class="bmark">$_$</mark>
 \define .hr() <br/><hr style="border:solid #acacac 1px;" />
+
+\define .op-example(_)
+<<list-links filter:"""[title[$_$ Operator (Beispiel)]]""" class:"notlink" subtype:"dt">>
+\end
 
 <$codeblock code={{!!text}} />

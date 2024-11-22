@@ -1,11 +1,11 @@
 author: FBB
 created: 20210720213549957
 creator: FBB
-modified: 20210720214408886
+modified: 20210907195249930
 modifier: FBB
+tags: [[field Operator]] [[Operator Beispiel]]
 title: field Operator (Beispiel)
 type: text/vnd.tiddlywiki
-
 
 <<.operator-example 1 "[field:author[JeremyRuston]]" "Plugins geschrieben von JeremyRuston">>
 

@@ -1,6 +1,6 @@
 created: 20201124210132107
 creator: FBB
-modified: 20210716211250617
+modified: 20210907191200299
 modifier: FBB
 tags: $:/tags/Stylesheet
 title: $:/editions/tw5.com/de/stylesheet
@@ -109,4 +109,8 @@ margin-bottom: 2px;
 a.tc-tiddlylink-external::after{
 color: #0000ff;
 content: "\0020\2398";
+}
+
+ul.notlink a.tc-tiddlylink-missing{
+display:none;
 }

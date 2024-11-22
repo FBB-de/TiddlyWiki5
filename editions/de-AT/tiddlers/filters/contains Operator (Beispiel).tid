@@ -1,11 +1,11 @@
 created: 20210722212339989
 creator: FBB
-modified: 20210724173319370
+modified: 20210906202949120
 modifier: FBB
-tags: [[Operator Beispiel]]
+tags: [[Operator Beispiel]] [[contains Operator]]
 title: contains Operator (Beispiel)
 type: text/vnd.tiddlywiki
 
-<<.operator-example 1  "[contains:tags[InhaltsVerzeichnis]]" """Das Ergebnist ist das gleiche wie <$macrocall $name=".value" _="[tag[~InhaltsVerzeichnis]]" >""">>
-<<.operator-example 2 "[[$:/StoryList]contains[contains Operator]]"  """prüft, ob der Tiddler [[contains Operator]] in der aktuellen Story angezeigt wird""">>
+<<.operator-example 1  "[contains:tags[InhaltsVerzeichnis]]" """Das Ergebnis ist das gleiche wie <$macrocall $name=".value" _="[tag[~InhaltsVerzeichnis]]" >""">>
+<<.operator-example 2 "[[$:/StoryList]contains[contains Operator]]"  """Prüft, ob der Tiddler [[contains Operator]] in der aktuellen Story angezeigt wird""">>
 <<.operator-example 3  "[contains:title[(Beispiel)]]" """Sucht alle Tiddler die im Titel den Begriff "(Beispiel)" haben.""">>

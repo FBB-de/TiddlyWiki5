@@ -1,0 +1,54 @@
+caption: filter
+created: 20210906190602894
+creator: FBB
+modified: 20210907193143278
+modifier: FBB
+op-input: Eine Auswahl von [[Titeln|Titelselektion]] die als Eingabe für den Filter dienen.
+op-neg-input: Eine Auswahl von [[Titeln|Titelselektion]] die als Eingabe für den Filter dienen.
+op-neg-output: Die Eingabetitel zurückgeben, bei denen mit dem Unterfiilter <<.place S>> <<.em keine>> Übereinstimmung gefunden wird.
+op-output: Eine Liste von [[Titeln|Titelselektion]] welche mit dem Unterfilter <<.place S>> gefunden werden.
+op-parameter: ein [[Filter-Ausdruck]]
+op-parameter-name: S
+op-purpose: Einen Unterfilter auf jeden Eingabetitel anwenden und die Titel zurückgeben, die ein nicht leeres Ergebnis des Unterfilters liefern.
+origin: filter Operator
+tags: Filter-Operator Negierbarer-Operator
+title: filter Operator
+type: text/vnd.tiddlywiki
+
+<<.from-version-de "5.1.23">> Der <<.op filter>> Operator führt für jeden Eingabetitel einen Unterfilter durch und gibt diejenigen Eingabetitel zurück, für die der Unterfilter ein nicht leeres Ergebnis liefert. Das bedeutet es wird nemals eine leere Liste zurückgegeben! Die Ergebnisse des Unterfilters werden anschließend verworfen.
+
+Einfache Filteroperationen können direkt miteinander verkettet werden (z. B. `[tag[InhaltsVerzeichnis]search[foo]]`). Aber das funktioniert nicht, wenn die Filteroperationen eine Berechnung von Zwischenergebnissen erfordern. Der <<.op filter>> Operator kann verwendet werden, um nach einem Zwischenergebnis zu filtern, welches danach wieder verworfen wird. Wie im oben sucht das nächste Beispiel nach dem Tag `InhaltsVerzeichnis`, aber zusätzlich filter wir auch nach jenen Tiddlern, deren Textfeld länger als 1000 Zeichen ist:
+
+```
+<$vars myfilter="[get[text]length[]compare:integer:gteq[1000]]">
+<$list filter="[tag[HelloThere]search[po]filter<myfilter>]">
+<div>
+<$link>
+<$text text=<<currentTiddler>>/>
+</$link>
+</div>
+</$list>
+</$vars>
+```
+
+<<.tip-de "Vergleiche dazu auch den ähnlichen [[subfilter Operator]], der einen Subfilter ausführt aber die Ergebnisse direkt zurückgibt">>
+
+<<.tip-de """Vergleiche auch mit dem benannten für [[Filter-Durchlauf]]-Präfix `:filter`, der analog zu dem <$macrocall $name=".op" _="filter"/> Operator ist.""">>
+
+:Die Verwendung von:
+
+```
+\define larger-than-1k() [get[text]length[]compare:integer:gteq[1000]]
+
+{{{ [tag[HelloThere]filter<larger-than-1k>] }}}
+```
+
+: ist gleichwertig mit:
+
+```
+{{{ [tag[InhaltsVerzeichnis]] :filter[get[text]length[]compare:integer:gteq[1000]] }}}
+```
+
+<<.op-example "filter">>
+
+<<wikidokulink2>>

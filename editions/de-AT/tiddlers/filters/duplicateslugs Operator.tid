@@ -1,0 +1,17 @@
+caption: duplicateslugs
+created: 20210827202251485
+modified: 20210907194545466
+op-input: Eine [[Titelselektion]]
+op-output: Die ausgegebenen Titel werden so umgewandelt, dass sie nur Kleinbuchstaben, Zahlen, Punkte, Bindestriche und Unterstriche enthalten.
+op-purpose: Gibt jedes Element in der Liste in einer für Menschen lesbaren Form zur Verwendung in URL's oder Dateinamen zurück
+origin: duplicateslugs Operator
+tags: Filter-Operator
+title: duplicateslugs Operator
+type: text/vnd.tiddlywiki
+
+<<.from-version-de "5.1.23">> Der Operator <<.olink slugify>> kann verwendet werden, um beliebige Tiddler-Titel in menschenlesbare Zeichenketten umzuwandeln, die in URLs oder Dateinamen verwendet werden können. Es ist jedoch möglich, dass mehrere verschiedene Titel in dieselbe Zeichenfolge umgewandelt werden. Der Operator <<.olink duplicateslugs>> kann verwendet werden, um eine Warnung anzuzeigen.
+
+<<.op-example "duplicateslugs">>
+
+
+<<wikidokulink2>>

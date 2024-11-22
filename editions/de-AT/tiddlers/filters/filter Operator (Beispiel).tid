@@ -1,0 +1,23 @@
+created: 20210907201012691
+modified: 20210907201740127
+tags: [[filter Operator]] [[Operator Beispiel]]
+title: filter Operator (Beispiel)
+type: text/vnd.tiddlywiki
+
+\define groesser_1k() [get[text]length[]compare:integer:gteq[1000]]
+\define kleiner_2k() [get[text]length[]compare:integer:lteq[2000]]
+\define fehlende_links() [links[]!is[shadow]is[missing]]
+\define display-variable(name)
+''<$text text=<<__name__>>/>'': <code><$text text={{{ [<__name__>getvariable[]] }}}/></code>
+\end
+
+Die nachfolgenden Beispiele verwenden folgenden vordefinierten Variablen:
+
+* <<display-variable groesser_1k>>
+* <<display-variable kleiner_2k>>
+* <<display-variable fehlende_links>>
+
+<<.operator-example 1 "[tag[InhaltsVerzeichnis]filter<groesser_1k>]">>
+<<.operator-example 2 "[tag[InhaltsVerzeichnis]filter<kleiner_2k>]">>
+<<.operator-example 3 "[tag[InhaltsVerzeichnis]filter<groesser_1k>filter<kleiner_2k>]">>
+<<.operator-example 4 "[tag[Features]filter<fehlende_links>]">>

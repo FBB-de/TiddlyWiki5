@@ -1,0 +1,23 @@
+caption: days
+created: 20210827192620509
+creator: FBB
+modified: 20210907194500051
+modifier: FBB
+op-input: Eine [[Titelselektion]]
+op-neg-output: Tiddler, bei denen das Feld <<.place F>> mindestens <<.place D>> Tage in der { Zukunft | Vergangenheit } liegt.
+op-output: Die Tiddler, bei denen das Feld <<.place F>> für <<.place D>> Tage in der { Zukunft | Vergangenheit } oder einem beliebigen Zeitpunkt { vor | nach } steht, <br/>einschließlich der { Vergangenheit | Zukunft }.
+op-parameter: eine { positive | negative } Anzahl von Tagen, Standardwert ist 0
+op-parameter-name: D
+op-purpose: Tiddler über ein Datum finden
+op-suffix: Der Name eines [[Datumfelds|Datumsfelder]], standardmäßig ist das <<.field modified>>
+op-suffix-name: F
+origin: days Operator
+tags: Filter-Operator Gruppen-Operator Negierbarer-Operator
+title: days Operator
+type: text/vnd.tiddlywiki
+
+selektiert Tiddler, bei denen ein bestimmtes [[Datumsfeld]] (standardmäßig <<.field "modified">>) innerhalb eines bestimmten Datumsbereichs liegt. Der Zeitanteil des Feldwertes wird ignoriert.
+
+<<.op-example "days">>
+
+<<wikidokulink2>>

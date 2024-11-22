@@ -1,0 +1,35 @@
+caption: each
+created: 20210827211242660
+creator: FBB
+modified: 20210907194625722
+modifier: FBB
+op-input: Eine [[Titelselektion]]
+op-output: Eine Auswahl, welche den ersten Eingabetitel enthält, der für den Wert des Feldes <<.place F>> gefunden wird.
+op-parameter: keiner
+op-parameter-name: F
+op-purpose: Aus jeder Gruppe von Eingabetiteln einen nach einem Feld auswählen
+op-suffix: optional, `list-item` oder `value`
+op-suffix-name: S
+origin: each Operator
+tags: Filter-Operator Gruppen-Operator
+title: each Operator
+type: text/vnd.tiddlywiki
+
+Jeder Eingabetitel wird der Reihe nach bearbeitet. Der Wert des Feldes <<.place F>> im entsprechenden Tiddler wird untersucht.
+
+;each
+:Solange der Wert des Feldes eindeutig ist (d.h. noch nicht vorgekommen ist), wird der Titel an die Ausgabe angehängt.
+
+;each:list-item
+:Der Wert wird wie eine [[Titelliste|Titellisten]] behandelt. Jeder Titel in der Liste wird der Reihe nach betrachtet. Wurde er noch nicht gefunden, wird er an die Ausgabe angehängt.
+
+;each:value
+:Solange der Titel eindeutig ist, wird er an die Ausgabe angehängt, unabhängig davon, ob der entsprechende Tiddler existiert oder nicht.
+
+<<.note-de """Wenn ein Tiddler das Feld ''F'' nicht enthält, wird er so behandelt, als ob der Wert des Feldes leer wäre! <br/>
+Ein Filterausdruck wie `[each[motovun]]` gibt also einen Tiddler zurück, der kein "//motovun//"-Feld enthält, sowie einen Tiddler mit jedem einzelnen Wert dieses Feldes (falls vorhanden). Um nur die Tiddler zu erhalten, die einen nicht-leeren Wert für das Feld "//motovun//" haben, kann man `[each[motovun]has[motovun]]` verwenden.
+""">>
+
+<<.op-example "each">>
+
+<<wikidokulink2>>

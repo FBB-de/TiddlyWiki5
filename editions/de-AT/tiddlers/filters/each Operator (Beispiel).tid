@@ -1,0 +1,13 @@
+created: 20210827220934598
+modified: 20210827222319149
+origin: 
+tags: [[each Operator]] [[Operator Beispiel]]
+title: each Operator (Beispiel)
+type: text/vnd.tiddlywiki
+
+<<.operator-example 1 "[each[color]]" """Zeigt jeweils den ersten Tiddler der eine Farbe definiert""">>
+<<.operator-example 2 "[sort[title]each[type]]" "Alphabetisch sortiert jeweils der erste Tiddler eines Typs">>
+<<.operator-example 3 "[each:list-item[list]]" "Alle an einer beliebigen Stelle des Listenfelds vom Core aufgeführten Tiddler">>
+
+<<.operator-example 4 "[[Non existing]] [[GettingStarted]] +[each:value[]]" "Vergleiche dies mit `+[each[]]` unten">>
+<<.operator-example 5 "[[Non existing]] [[GettingStarted]] +[each[]]" "Vergleiche dies mit`+[each:value[]]` oben">>

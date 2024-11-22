@@ -1,0 +1,10 @@
+created: 20210907195337584
+modified: 20210907200635551
+tags: [[fields Operator]] [[Operator Beispiel]]
+title: fields Operator (Beispiel)
+type: text/vnd.tiddlywiki
+
+<<.operator-example 1 "[[HelloThere]fields[]]" "Felder der [[Willkommens-Seite|HelloThere]]">>
+<<.operator-example 2 "[[HelloThere]fields:include[list title text gibt_es_nicht_Feld]]" """Felder der [[Willkommens-Seite|HelloThere]] anhand einer kurzen Liste prüfen. Nicht gefundene Felder werden nicht angezeigt.""">>
+<<.operator-example 4 "[[HelloThere]fields:exclude[bag list title text tags]]" "Felder der [[Willkommens-Seite|HelloThere]] bei Nutzung des exclude Suffixes">>
+<<.operator-example 5 "[[HelloThere]fields[]] -list -title -text -tags" """Felder der [[Willkommens-Seite|HelloThere]], nach Durchlauf mehrerer Filter (ohne Suffix "exclude")""">>

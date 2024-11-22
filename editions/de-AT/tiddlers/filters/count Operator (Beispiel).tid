@@ -1,0 +1,7 @@
+created: 20210827191902594
+modified: 20210827192227842
+tags: [[count Operator]] [[Operator Beispiel]]
+title: count Operator (Beispiel)
+type: text/vnd.tiddlywiki
+
+<<.operator-example 1 "[tag[Operator Beispiel]count[]]">>
